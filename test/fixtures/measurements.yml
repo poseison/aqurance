@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  measuretype: 1
+  mdate: 2014-07-31 10:16:55
+  comments: MyString
+  glucoze: 1
+  didinsul: false
+  insuleinunits: 1
+  didscheduleat: false
+  alertdt: 2014-07-31 10:16:55
+
+two:
+  measuretype: 1
+  mdate: 2014-07-31 10:16:55
+  comments: MyString
+  glucoze: 1
+  didinsul: false
+  insuleinunits: 1
+  didscheduleat: false
+  alertdt: 2014-07-31 10:16:55

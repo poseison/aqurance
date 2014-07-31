@@ -1,0 +1,11 @@
+# A sample Bowerfile
+# Check out https://github.com/42dev/bower-rails#ruby-dsl-configuration for more options
+
+# asset 'bootstrap'
+asset "backbone"
+asset "moment", "2.0.0" # get exactly version 2.0.0
+asset 'angular', '1.2.13'
+asset 'angular-route'
+asset 'angular-resource'
+asset 'angular-mocks'
+asset 'angular-ui-bootstrap-bower'

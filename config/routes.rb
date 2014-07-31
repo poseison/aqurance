@@ -1,5 +1,14 @@
 Aqurance::Application.routes.draw do
+  get "angtest/index"
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  namespace :api do
+      namespace :v1 do
+        resources :meausurements
+      end
+    end
   devise_for :patients
+  resources :meausurements
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

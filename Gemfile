@@ -14,6 +14,10 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
+gem 'active_model_serializers'
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem "bower-rails", "~> 0.8.3"
+gem 'angular-rails-templates'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

@@ -1,0 +1,2 @@
+module AngtestHelper
+end
