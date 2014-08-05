@@ -1,6 +1,7 @@
-ActiveAdmin.register Measurement do
+ActiveAdmin.register Patient do
+  permit_params :email, :page, :Pname, :Pusername, :Pweight
 
- permit_params :glucoze
+
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #

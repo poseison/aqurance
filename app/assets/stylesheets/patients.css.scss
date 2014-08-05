@@ -1,0 +1,1049 @@
+// Place all the styles related to the patients controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html{
+
+	position: relative;
+    min-height: 100%;
+	
+}
+
+body{
+	
+	margin: 0 auto;
+	width: 960px; 
+
+	margin-bottom:100px;
+	background-color:#333333;
+	background-image:url('images/back.svg');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+	/*responsive image 
+	background-image:url('images/back.png');
+	background-repeat:no-repeat;
+	
+	background-size:cover;
+	background-position:center; */
+
+}
+
+#center_container{
+
+	text-align: center;
+	
+}
+
+#loading{
+  
+  background-image:url('/assets/images/blur.png');
+}
+
+.bg{
+
+background-color:#333333;
+background-image:none;
+	
+}
+
+
+footer {
+
+	font-family: 'Open Sans Light','Helvetica Neue',Sans-serif;
+	color: #ededed;
+	font-size: 13px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+		
+}
+
+/*
+.blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+*/
+
+#login_container{
+
+	margin: 0 0 100px; /* bottom = footer height */
+
+}
+
+
+a:link,a:visited {
+
+    text-decoration: none;
+	color:#f8f8f8;
+}
+
+/* -------------- HOMEPAGE START-------------- */
+
+.welcome_text{
+	
+	font-family: 'Open Sans SemiBold','Helvetica Neue',Sans-serif;
+	color: #ededed;
+	font-size: 35px; /* Approximation due to font substitution */
+}
+.sub_text{
+	font-family: 'Open Sans Light','Helvetica Neue',Sans-serif;
+	color: #ededed;
+	font-size: 35px; /* Approximation due to font substitution */
+	line-height: 55px; /* Approximation due to font substitution */
+	margin:150px;
+}
+
+.circle{
+	background-image:url('images/profile_pic.png');
+	background-repeat: no-repeat;
+	background-position:center;
+	margin-top:50px;
+	margin-bottom:50px;
+	background-color:  #f8f8f8;
+	border-radius: 50%;
+	width:120px;
+	height:120px;
+	display:inline-block;
+}
+
+.blue_circle, .red_circle, .orange_circle,.green_circle{
+	margin: 45px 45px 0px 45px;
+	border-radius: 50%;
+	width: 110px;
+	height: 110px;
+	display:inline-block;
+	background-repeat: no-repeat;
+	background-position:center;
+}
+
+.blue_text, .red_text, .orange_text,.green_text{
+	font-family: 'Open Sans Light','Helvetica Neue',Sans-serif;
+	font-size: 33px;
+	color:#f8f8f8;
+	margin: 0px 58px 0px 45px;
+	display:inline-block;
+}
+
+.blue_circle{
+	background-color:  #448ccb;
+	background-image:url('images/history.png');
+}
+.green_circle{
+	background-color: #39b54a;
+	background-image:url('images/charts.png');
+}
+.orange_circle{
+	background-color: #fbaf5d;
+	background-image:url('images/doctor.png');
+}
+.red_circle{
+	background-color: #eb5b4c;
+	background-image:url('images/profile.png');
+}
+
+.orange_circle:hover,.green_circle:hover,.red_circle:hover,.blue_circle:hover { 
+	-moz-box-shadow: 0 0 35 rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 35px rgba(0,0,0,0.5);
+	box-shadow: 0 0 35px rgba(0,0,0,0.5);
+	-webkit-transform: translateY(-3px);
+  transform: translateY(-3px);
+}
+
+
+/* -------------- HOMEPAGE END-------------- */
+
+/* -------------- LOGIN START -------------- */
+
+
+
+.login {	
+
+	position:absolute;
+	top:40%;
+	left:50%;
+	margin:-250px 0 0 -200px; 
+    width: 420px;
+	height: 350px;
+    background: #404040;
+    display:block;
+    border-radius: 5px 5px 5px 5px;	
+	opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+}
+
+
+.register {
+
+	position:absolute;
+	top:40%;
+	left:50%;
+	margin:-250px 0 0 -200px;
+    width: 420px;
+	height: 500px;
+    background: #404040;
+	display:block;
+    border-radius: 5px 5px 5px 5px;
+	opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+}
+
+.logo{
+
+	background-image:url('images/Logo.png');
+	background-repeat:no-repeat;
+	width:83px;
+	height:96px;
+	float:left;
+	margin: 10px 0px 0px 50px;	
+}
+
+.title {
+		
+	font-family: 'Open Sans Light','Helvetica Neue',Sans-serif;
+	float:right;
+	color:  #f8f8f8;
+	font-size: 35px; /* Approximation due to font substitution */
+	font-weight: 300;
+	line-height: 23px; /* Approximation due to font substitution */
+	margin:40px;
+}
+
+.register  input[value] , .register input[placeholder], .login input[value] , .login input[placeholder]{
+
+	font-family: 'Open Sans Light','Helvetica Neue',Sans-serif;
+	font-size: 20px;
+	
+}
+
+.sign_btn , .register_btn2 {
+	color:#f8f8f8;
+}
+
+.register_btn, .sign_btn2{
+	color:#f8f8f8;
+	background-color:transparent;
+	outline-color: transparent;
+	border: 0px solid #000000;
+	margin: 40px 30px 0px 42px;
+}
+
+.register input[type=text] ,.login input[type=text]{
+	width: 336px;
+	height: 56px;
+	background-color: #d3d3d3;
+	border: 0px solid #000000; 
+	margin: 5px 0px 0px 0px;
+	padding: 3px 0px 3px 3px;
+	outline-color: #e74c3c;
+
+}
+
+.register input[type=password], .login input[type=password]{
+	width: 336px;
+	height: 56px;
+	background-color: #d3d3d3;
+	border: 0px solid #000000; 
+	margin: 5px 0px 0px 0px;
+	padding: 3px 0px 3px 3px;
+	outline-color: #e74c3c;
+}
+
+.sign_btn, .register_btn2{
+	width: 200px;
+	height: 53px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background-color: #e74c3c;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+	box-shadow: 0 1px 3px rgba(0,0,0,.13);
+	border: 0px solid #000000; 
+	float:left;
+	margin: 30px 0px 0px 42px;
+	outline-color: transparent;
+
+}
+
+.login input[type=button]:active{
+	opacity: 0.6;
+}
+
+/* --------------LOGIN END --------------*/
+
+
+
+
+/* -------------- HISTORY START-------------- */
+#history_container{
+	margin: 0 auto;
+	width: 960px; 
+	
+
+
+
+
+}
+
+/* NAVIGATION */
+#header{
+	border-radius:15px;
+	background-color: #484848;
+	height: 100px;
+	 
+	
+}
+
+
+
+.h_blue_circle, .h_red_circle, .h_orange_circle,.h_green_circle{
+	float:left;
+	margin: 25px 25px 25px 25px;
+	border-radius: 50%;
+	width: 51px;
+	height: 51px;
+	display:inline-block;
+	background-repeat: no-repeat;
+	background-position:center;
+}
+
+
+
+.h_blue_circle{
+
+	background-color:  #448ccb;
+	background-image:url('images/history_header.png');
+}
+.h_green_circle{
+	background-color: #39b54a;
+	background-image:url('images/charts_header.png');
+}
+.h_orange_circle{
+	background-color: #fbaf5d;
+	background-image:url('images/doctor_header.png');
+}
+.h_red_circle{
+	background-color: #eb5b4c;
+	background-image:url('images/settings_header.png');
+}
+
+.h_orange_circle:hover,.h_green_circle:hover,.h_red_circle:hover,.h_blue_circle:hover { 
+	-moz-box-shadow: 0 0 35 rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 35px rgba(0,0,0,0.5);
+	box-shadow: 0 0 35px rgba(0,0,0,0.5);
+}
+
+.home_btn{
+	
+	font-family: 'Open Sans Light','Helvetica Neue',Sans-serif;
+	float:right;
+	color:  #f8f8f8;
+	font-size: 25px; /* Approximation due to font substitution */
+	font-weight: 300;
+	line-height: 23px;
+	margin: 35px 25px 35px 25px;
+
+}
+
+
+/* NAVIGATION END */
+
+/* CALENDAR */
+.calendar_container{
+
+	width:280px;
+	height:620px;
+	margin:0 auto;
+	margin-right:25px;
+	float:left;
+}
+
+.calendar{
+
+	width:250px;
+	margin:0 auto;
+	
+
+}
+
+.calendar a{
+	font-family: 'Open Sans Light','Helvetica Neue',Sans-serif;
+	font-size:12px;
+	color:#333333;
+}
+.calendar-day {
+		
+	background: #333333;
+}
+				.calendar-day .titular {
+					background: #1a4e95;
+				}
+					.calendar-day .arrow-btn:hover {
+						background: #16417E;
+					}
+				.calendar-day .the-day {
+					margin: 0;
+					text-align: center;
+					font-size: 100px;
+				}
+				.add-event.button {
+					background: #4fc4f6;
+				}
+					.add-event.button:hover {
+						background: #35aadc;
+					}
+			.calendar-month {
+				font-family: 'Open Sans SemiBold','Helvetica Neue',Sans-serif;
+				height: 320px;
+			}
+				.calendar-month .titular {
+					background: #3468af;
+				}
+					.calendar-month .arrow-btn:hover {
+						background: #1a4e95;
+					}
+				.calendar {
+				
+					text-align: center;
+				}
+					.calendar a {
+						font-size: 14px;
+					}
+					.calendar td, .calendar th {
+						width: 30px;
+						height: 28px;						
+					}
+					.calendar .days-week {
+						color: #333333;
+					}
+					.calendar .today {
+						display: block;
+						width: 34px;
+						line-height: 34px;
+						background: #448ccb;
+						border-radius: 100%;
+					}
+
+.calendar_container .header{
+	
+	width:250px;
+	height:50px;
+	background-color:#404040;
+	margin: 0px 0px 0px 15px;
+	
+}
+
+
+.calendar_container .content{
+
+	width:250px;
+	height:240px;
+	background-color:#f8f8f8;
+	margin: 0px 0px 0px 15px;
+	/*border-bottom:dashed 3px #448ccb; */
+
+	border-bottom-left-radius: 2%;
+	border-bottom-right-radius: 2%;
+	
+
+	-moz-box-shadow: 0px 8px 0px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 8px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 8px 0px rgba(0,0,0,0.2);
+}
+
+
+.calendar_container .bottom{
+
+	width:276px;
+	height:120px;
+	background-image:url('images/calendar_shadow.png');
+	margin: 0px 0px 0px 35px;
+	
+
+}
+
+.month_label{
+	
+	font-family: 'Open Sans SemiBold','Helvetica Neue',Sans-serif;
+
+	float:center;
+	color:  #f8f8f8;
+	font-size: 30px; /* Approximation due to font substitution */
+
+	text-align:center;
+	
+
+
+}
+
+
+
+.bottom .label{
+	font-family: 'Open Sans Light','Helvetica Neue',Sans-serif;
+	margin-top:40px;
+}
+.calendar_selection{
+	
+	font-family: 'Open Sans Light','Helvetica Neue',Sans-serif;
+	color: #448ccb;
+	font-size: 25px;
+	font-weight: 700;
+	line-height: 36px;
+	width: 63px;
+	height: 25px;
+	
+}
+
+/* CALENDAR END*/
+
+/* SEARCH */
+
+.search{
+
+	width:240px;
+	margin:0px 0px 0px 40px;
+	float:left;
+
+	border-bottom:solid 1px #6d6d6d;
+
+}
+
+.search input[type=text]{
+
+	width:200px;
+	color:#6d6d6d;
+	font-size:25px;
+	background-color: transparent;
+	border: 0px solid #000000; 
+	outline-color: transparent;
+	text-align:left;
+	margin-top:20px;
+	padding: 3px 0px 3px 3px;
+	
+}
+ /* SCROLLBAR. */
+ 
+::-webkit-scrollbar {
+  width: 8px; /* 1px wider than Lion. */
+  /* This is more usable for users trying to click it. */
+  background-color: rgba(0,0,0,0);
+  -webkit-border-radius: 100px;
+}
+/* hover effect for both scrollbar area, and scrollbar 'thumb' */
+::-webkit-scrollbar:hover {
+  background-color: rgba(0, 0, 0, 0.09);
+}
+ 
+/* The scrollbar 'thumb' ...that marque oval shape in a scrollbar */
+::-webkit-scrollbar-thumb:vertical {
+  /* This is the EXACT color of Mac OS scrollbars. 
+     Yes, I pulled out digital color meter */
+  background: rgba(0,0,0,0.1);
+  -webkit-border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:vertical:active {
+  background: rgba(0,0,0,0.2); /* Some darker color when you click it */
+  -webkit-border-radius: 100px;
+}
+
+ /* SCROLLBAR END */
+
+.hourly_search{
+	overflow:auto;
+	width:250px;
+	height:350px;
+	margin:0px 0px 5px 27px;
+	display:inline-block;
+
+	
+}
+
+.hours{
+
+	width: 110px;
+	height: 50px;
+	display:inline-block;
+	margin: 5px 0px 0px 1px;
+	
+	-webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+
+}
+
+.hours {
+  background: none repeat scroll 0 0 #404040;
+
+  color: white;
+}
+.hours:hover {
+  background: none repeat scroll 0 0 #353535;
+  color: white;
+}
+
+.hour_label{
+	font-family: 'Open Sans Bold','Helvetica Neue',Sans-serif;
+	color:  #f8f8f8;
+	font-size: 15px;
+	margin: 14px 7px 0px 0px;
+	
+}
+
+
+.bad,.ok,.good{
+	
+	width:35px;
+	height:35px;
+	float:left;
+	margin: 7px 5px 5px 5px;
+	
+}
+
+.good{
+	
+	background-image:url('images/history/good.png'); /* Safari 3-5 */
+    background-repeat:no-repeat;
+
+	
+}
+
+.bad{
+	background-image:url('images/history/bad.png'); /* Safari 3-5 */
+    background-repeat:no-repeat;
+	
+}
+
+.ok{
+	background-image:url('images/history/ok.png'); /* Safari 3-5 */
+    background-repeat:no-repeat;
+
+}
+
+
+
+
+/* SEARCH END */
+
+/* MEASUREMENTS */
+
+#daily_container{
+	
+	width: 640px;
+	min-height:400px;
+	margin:0 auto;
+	display:inline-block;
+
+}
+
+#daily_container .title{
+	font-family: 'Open Sans Light','Helvetica Neue',Sans-serif;
+	color:  #f8f8f8;
+	float:left;
+	font-size: 17px; /* Approximation due to font substitution */
+	margin:10px;
+}
+
+
+
+.time{
+	font-family: 'Open Sans SemiBold','Helvetica Neue',Sans-serif;
+	float:left;
+	color:  #f8f8f8;
+	font-size: 30px; /* Approximation due to font substitution */
+	font-weight: 300;
+	text-align:center;
+	margin:25px 0px 0px 30px;
+
+}
+
+.day{
+	font-family: 'Open Sans Light','Helvetica Neue',Sans-serif;
+	float:right;
+	color:  #f8f8f8;
+	font-size: 20px; /* Approximation due to font substitution */
+	font-weight: 300;
+	text-align:center;
+	margin:32px 30px 0px 0px;
+
+}
+
+.left{
+	width: 320px;
+	float:left;
+
+}
+.right{
+	width: 320px;
+	float:right;
+}
+
+.date{
+
+	background-color: #404040;
+	opacity:0.7;
+	border-radius: 8px;
+	width: 256px;
+	height: 98px;
+	float:left;
+	margin:20px 0px 10px 20px;
+}
+
+
+
+.insulin{
+	background-color: #404040;
+	opacity:0.7;
+	border-radius: 8px;
+	width: 75px;
+	height: 75px;
+	float:left;
+	background-image:url('images/history/insulin.png');
+	background-repeat:no-repeat;
+	background-position:center;
+	margin-left: 20px;
+}
+
+.glucose{
+	background-color: #404040;
+	opacity:0.7;
+	border-radius: 8px;
+	width: 75px;
+	height: 75px;
+	float:left;
+	background-image:url('images/history/blood.png');
+	background-repeat:no-repeat;
+	background-position:center;
+	margin:0px 15px 0px 15px;
+}
+.weight{
+
+	background-color: #404040;
+	opacity:0.7;
+	border-radius: 8px;
+	width: 75px;
+	height: 75px;
+	float:left;
+	background-image:url('images/history/weight.png');
+	background-repeat:no-repeat;
+	background-position:center;
+	margin-right:0px 0px 0px 10px;
+}
+.photo{
+	opacity:0.7;
+	width: 256px;
+	height: 186px;
+	background-color: #404040;
+	border-radius: 8px;
+	width: 256px;
+	height: 186px;
+	float:right;
+	margin:20px 30px 5px 10px;
+	
+	background-image:url('images/history/photo.png');
+	background-repeat:no-repeat;
+	background-position:center;
+
+}
+
+.comments{
+	opacity:0.7;
+	background-color: #404040;
+	border-radius: 8px;
+	width: 256px;
+	height: 135px;
+	float:left;
+	margin:30px 30px 10px 20px;
+	background-image:url('images/history/comments.png');
+	background-repeat:no-repeat;
+	background-position:center;
+
+
+}
+
+.tags{
+	background-color: #404040;
+	opacity:0.7;
+	border-radius: 8px;
+	width: 256px;
+	height: 135px;
+	float:right;
+	margin:20px 30px 10px 10px;
+	
+	background-image:url('images/history/tags.png');
+	background-repeat:no-repeat;
+	background-position:center;
+
+}
+
+
+
+.overview{
+	position:relative;
+	opacity:0.7;
+	background-color: #404040;
+	border-radius: 10px;
+	width: 590px;
+	height: 250px;
+	margin: 400px 0px 20px 20px;
+
+}
+
+
+.history_buttons{
+
+	width:120px;
+	float:none;
+	display:inline;
+	margin:0px 50px 0px 450px;
+	
+}
+
+.history_button{
+
+  border: 0 none;
+  outline-color: transparent;
+  border-radius: 20px;
+  color: #FFFFFF;
+  cursor: pointer;
+
+  font-family: 'Open Sans Light','Helvetica Neue',Sans-serif;
+  font-size: 15px;
+
+  line-height: 20px;
+  margin:10px;
+  padding: 7px 5px;
+  text-transform: none;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  width: 10%;
+  /* auto */
+  text-align: center;
+  /* DELETE WHEN WIDTH AUTO */
+
+}
+
+.history_button {
+  background: none repeat scroll 0 0 #999999;
+  color: white;
+}
+.history_button:hover {
+  background: none repeat scroll 0 0 #448ccb;
+  color: white;
+}
+
+
+/* MEASUREMENTS END */
+
+
+
+
+
+/* ------------------- HISTORY END ------------------------ */
+
+/* ------------------- PROFILE START ------------------------ */
+
+.profile{
+
+	width:300px;
+	margin:0 auto;
+	float:left;
+	margin-left:150px;
+	text-align:center;
+	
+}
+
+.left_sidebar img{
+
+	margin: 40px 40px 20px 40px;
+	
+}
+.left_sidebar{
+	background-color: #404040;
+	border-radius: 30px;
+	width: 250px;
+	height: 250px;
+	float:left;
+	margin: 45px 0px 0px 0px;
+}
+
+
+.right_sidebar{
+	width:409px;
+	height:560px;
+	float:left;
+	background-image:url('images/profile/clipboard2.png');
+	/*background-color: #404040;*/
+	background-repeat:no-repeat;
+	border-radius: 20px;
+	margin:10px 0px 0px 0px;
+	padding-top:130px;
+
+}
+
+
+
+.right_sidebar .label{
+
+	font-family: 'Open Sans SemiBold','Helvetica Neue',Sans-serif;
+	float:left;
+	font-size:17px;
+	margin:25px 0px 0px 80px;
+	text-align:left;
+
+}
+
+.left_sidebar .label{
+	
+	margin:5px;
+	font-size:20px;
+}
+
+.label{
+	font-family: 'Open Sans SemiBold','Helvetica Neue',Sans-serif;
+	width:250px;
+	float:center;
+	color:  #f8f8f8;
+	font-size: 30px; /* Approximation due to font substitution */
+	font-weight: 300;
+	text-align:center;
+	margin:auto;
+	margin-top:10px;
+	display:inline-block;
+
+}
+.prof_label{
+	font-family: 'Open Sans Light','Helvetica Neue',Sans-serif;
+	float:right;
+	font-size:17px;
+	margin:0px;
+	text-align:center;
+	
+
+}
+.button_bg{
+
+	width:150px;
+	 display: inline-block;
+	margin:30px 60px 0px 0px;
+	
+}
+
+.profile_button{
+
+  border: 0 none;
+  outline-color: transparent;
+  border-radius: 20px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Open Sans Light','Helvetica Neue',Sans-serif;
+  font-size: 15px;
+
+  line-height: 20px;
+  margin:10px;
+  padding: 7px 5px;
+  text-transform: none;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  width: 100%;
+  /* auto */
+  text-align: center;
+  /* DELETE WHEN WIDTH AUTO */
+
+}
+
+.profile_button {
+  background: none repeat scroll 0 0 #999999;
+  color: white;
+}
+.profile_button:hover {
+  background: none repeat scroll 0 0 #eb5b4c;
+  color: white;
+}
+
+
+/* ------------------- PROFILE END ------------------------ */
+
+
+/* ------------------- CHARTS START ------------------------ */
+.charts{
+
+	width:640px;
+	margin:0 auto;
+	float:right;
+	
+
+}
+.charts .left{
+
+	background-color: #404040;
+	opacity:0.7;
+	border-radius: 10px;
+	width: 300px;
+	height: 300px;
+	float:left;
+	margin: 20px 0px 0px 0px;
+
+}
+
+.charts .right{
+
+	background-color: #404040;
+	opacity:0.7;
+	border-radius: 10px;
+	width: 300px;
+	height: 300px;
+	float:right;
+	margin: 20px 0px 0px 0px;
+
+}
+
+.charts .center{
+
+	background-color: #404040;
+	opacity:0.7;
+	border-radius: 10px;
+	width: 640px;
+	height: 300px;
+	float:right;
+	margin: 35px 0px 0px 0px;
+
+}
+
+
+
+
+/* ------------------- CHARTS END ------------------------ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

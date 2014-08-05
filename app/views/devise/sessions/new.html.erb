@@ -1,0 +1,92 @@
+
+  <h2>Sign in</h2>
+	<script>
+			$(document).ready(function(){ 
+			$('center_container').toggleClass('blur');
+				$(".register").hide();	
+				
+				$('.register_btn').click(function(){
+					 $(".login").fadeOut();
+					 $(".register").fadeIn();		
+				});
+				$('.sign_btn2').click(function(){
+					 $(".register").fadeOut();
+					 $(".login").fadeIn();		
+				});
+			
+				
+			});
+			
+			
+	
+				
+	</script>
+  
+  
+<body id="center_container" class="bg">
+		
+
+	
+			<div id="loading">  
+			 <%= image_tag('blur.png') %>
+			</div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+			<div class="login">
+			
+				<div class="logo"></div>
+				<span class="title">Diabetes</span>
+				<input type="text" placeholder="Email Address" name="user"><br>
+				<input type="password" placeholder="Password" name="password"><br>
+				<input type="button" class="sign_btn" value="Sign in">
+				<input type="button" class="register_btn" value="Register">
+			
+			</div>	
+			<% end %>
+			<div class="register">		
+			
+				<div class="logo"></div>
+				<span class="title">Diabetes</span>
+				<input type="text" placeholder="Email Address" name="email"><br>
+				<input type="text" placeholder="Name" name="user"><br>
+				<input type="password"  placeholder="Password" name="password"><br>
+				<input type="password"  placeholder="Repeat Password" name="password"><br>
+				<input type="button" class="register_btn2" value="Register">
+				<input type="button" class="sign_btn2" value="Sign in">	
+			
+			</div>
+			
+
+	
+</body>	
+<footer>© 2014 Diabetes | <a href="#">Privacy Policy</a></footer>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!--
+  <div class="login">
+          <div class="logo"></div>
+          <div class="title">Diabetes</div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div><%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %></div>
+
+        <div><%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off" %></div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+        <% end -%>
+
+        <div ><input type="submit" class="sign_btn" value="Sign in"></div>
+      <% end %>
+
+      </div>
+</div>-->
+  <%= render "devise/shared/links" %>

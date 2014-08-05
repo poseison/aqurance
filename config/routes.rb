@@ -1,5 +1,7 @@
 Aqurance::Application.routes.draw do
   get "angtest/index"
+  get "provideapi/provide"
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   namespace :api do
@@ -9,11 +11,13 @@ Aqurance::Application.routes.draw do
     end
   devise_for :patients
   resources :meausurements
+  resources :patients
+  get ':status', to: 'errors#show', constraints: {status: /\d{3}/ }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'patient#create'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
