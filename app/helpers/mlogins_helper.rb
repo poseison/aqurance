@@ -1,0 +1,2 @@
+module MloginsHelper
+end

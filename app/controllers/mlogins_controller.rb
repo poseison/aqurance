@@ -1,0 +1,2 @@
+class MloginsController < ApplicationController
+end

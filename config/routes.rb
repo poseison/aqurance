@@ -1,4 +1,8 @@
 Aqurance::Application.routes.draw do
+  resources :mlogins
+
+  resources :mregisters
+
   get "angtest/index"
   get "provideapi/provide"
   
