@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-
+source 'https://rails-assets.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.4'
+gem 'rails', '4.1'
 
 # Use mysql as the database for Active Record
 gem 'mysql2'
@@ -12,12 +12,13 @@ gem 'sass-rails', '>= 3.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
+
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
+gem 'rails-assets-angular'
 gem 'active_model_serializers'
 gem 'activeadmin', github: 'gregbell/active_admin'
-gem "bower-rails", "~> 0.8.3"
-gem 'angular-rails-templates'
+
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

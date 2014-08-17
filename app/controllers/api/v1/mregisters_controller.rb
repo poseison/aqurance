@@ -1,0 +1,2 @@
+class MregistersController < ApplicationController
+end

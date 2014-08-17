@@ -23,41 +23,66 @@
 	</script>
   
   
-<body id="center_container" class="bg">
+
 		
 
 	
 			<div id="loading">  
 			 <%= image_tag('blur.png') %>
 			</div>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-			<div class="login">
+            
+            <div id="resp">
+                
+                
+            </div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    			<div class="login">
 			
-				<div class="logo"></div>
-				<span class="title">Diabetes</span>
-				<input type="text" placeholder="Email Address" name="user"><br>
-				<input type="password" placeholder="Password" name="password"><br>
-				<input type="button" class="sign_btn" value="Sign in">
-				<input type="button" class="register_btn" value="Register">
+    				<div class="logo"></div>
+    				<span class="title">Diabetes</span>
+                    <div><%= f.label :email %><br />
+                      <%= f.email_field :email, autofocus: true %></div>
+
+                      <div><%= f.label :password %><br />
+                        <%= f.password_field :password, autocomplete: "off" %></div>
+    				<input type="button" class="sign_btn" value="Sign in" onclick="submit() ">
+    				<input type="button" class="register_btn" value="Register">
 			
-			</div>	
-			<% end %>
+    			</div>	
+    			<% end %>  
+                <div id="resp">
+                sfsfdgdgfgdf
+                dfgdgd
+                </div> 
 			<div class="register">		
 			
 				<div class="logo"></div>
-				<span class="title">Diabetes</span>
-				<input type="text" placeholder="Email Address" name="email"><br>
-				<input type="text" placeholder="Name" name="user"><br>
-				<input type="password"  placeholder="Password" name="password"><br>
-				<input type="password"  placeholder="Repeat Password" name="password"><br>
-				<input type="button" class="register_btn2" value="Register">
-				<input type="button" class="sign_btn2" value="Sign in">	
-			
-			</div>
-			
+                <%= form_for(resource, :as => resource_name,
+                           :url => registration_path(resource_name),
+                           :html => {:id => "sign_up_user"},
+                           :format => :json,
+                           :remote => true ) do |f| %>
+                 <div><%= f.label :email %><br />
+                   <%= f.email_field :email, autofocus: true %></div>
 
-	
-</body>	
+                   <div><%= f.label :password %><br />
+                     <%= f.password_field :password, autocomplete: "off" %></div>
+
+                   <div><%= f.label :password_confirmation %><br />
+                     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+                   <div><%= f.submit :value =>  "Register",:class => 'button' %></div>
+           
+			
+                <% end %>
+                
+                
+                
+                
+            </div>
+           
+            <%= render "devise/shared/links" %>
+
+
 <footer>© 2014 Diabetes | <a href="#">Privacy Policy</a></footer>
  
  
@@ -89,4 +114,4 @@
 
       </div>
 </div>-->
-  <%= render "devise/shared/links" %>
+ 

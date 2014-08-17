@@ -1,4 +1,14 @@
 Aqurance::Application.routes.draw do
+  get 'registrations/create'
+
+  get 'registrations/sign_up'
+
+  get 'history/index'
+
+  get 'profiledit/index'
+
+  get 'welcome/index'
+
   resources :mlogins
 
   resources :mregisters
@@ -11,9 +21,10 @@ Aqurance::Application.routes.draw do
   namespace :api do
       namespace :v1 do
         resources :meausurements
+        resources :mregisters
       end
     end
-  devise_for :patients
+  devise_for :patients,:controllers => {registrations: 'registrations'}
   resources :meausurements
   resources :patients
   get ':status', to: 'errors#show', constraints: {status: /\d{3}/ }
@@ -21,7 +32,7 @@ Aqurance::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'patient#create'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
