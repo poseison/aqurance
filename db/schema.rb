@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140807083616) do
+ActiveRecord::Schema.define(version: 20140818083635) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -99,9 +99,19 @@ ActiveRecord::Schema.define(version: 20140807083616) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "profile_id"
+    t.string   "pillname"
+    t.date     "birthday"
+    t.integer  "diabetetype"
+    t.integer  "insuline"
   end
 
   add_index "patients", ["email"], name: "index_patients_on_email", unique: true, using: :btree
   add_index "patients", ["reset_password_token"], name: "index_patients_on_reset_password_token", unique: true, using: :btree
+
+  create_table "profiles", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

@@ -612,20 +612,20 @@ a:link,a:visited {
 
 .good{
 	
-	background-image:asset-url('/history/good.png'); /* Safari 3-5 */
+	background-image:asset-url('good.png'); /* Safari 3-5 */
     background-repeat:no-repeat;
 
 	
 }
 
 .bad{
-	background-image:asset-url('/history/bad.png'); /* Safari 3-5 */
+	background-image:asset-url('bad.png'); /* Safari 3-5 */
     background-repeat:no-repeat;
 	
 }
 
 .ok{
-	background-image:asset-url('/history/ok.png'); /* Safari 3-5 */
+	background-image:asset-url('ok.png'); /* Safari 3-5 */
     background-repeat:no-repeat;
 
 }
@@ -708,7 +708,7 @@ a:link,a:visited {
 	width: 75px;
 	height: 75px;
 	float:left;
-	background-image:asset-url('/history/insulin.png');
+	background-image:asset-url('insulin.png');
 	background-repeat:no-repeat;
 	background-position:center;
 	margin-left: 20px;
@@ -721,7 +721,7 @@ a:link,a:visited {
 	width: 75px;
 	height: 75px;
 	float:left;
-	background-image:asset-url('/history/blood.png');
+	background-image:asset-url('blood.png');
 	background-repeat:no-repeat;
 	background-position:center;
 	margin:0px 15px 0px 15px;
@@ -734,7 +734,7 @@ a:link,a:visited {
 	width: 75px;
 	height: 75px;
 	float:left;
-	background-image:asset-url('/history/weight.png');
+	background-image:asset-url('weight.png');
 	background-repeat:no-repeat;
 	background-position:center;
 	margin-right:0px 0px 0px 10px;
@@ -750,7 +750,7 @@ a:link,a:visited {
 	float:right;
 	margin:20px 30px 5px 10px;
 	
-	background-image:asset-url('/history/photo.png');
+	background-image:asset-url('photo.png');
 	background-repeat:no-repeat;
 	background-position:center;
 
@@ -764,7 +764,7 @@ a:link,a:visited {
 	height: 135px;
 	float:left;
 	margin:30px 30px 10px 20px;
-	background-image:asset-url('/history/comments.png');
+	background-image:asset-url('comments.png');
 	background-repeat:no-repeat;
 	background-position:center;
 
@@ -780,7 +780,7 @@ a:link,a:visited {
 	float:right;
 	margin:20px 30px 10px 10px;
 	
-	background-image:asset-url('/history/tags.png');
+	background-image:asset-url('tags.png');
 	background-repeat:no-repeat;
 	background-position:center;
 

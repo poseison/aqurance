@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes</title>
+ 	
+</head>
+	<body>
+		<script>
+			
+				$(document).ready(function(){ 
+			
+					$("#header").css('border-bottom', 'solid 5px #eb5b4c');
+				});
+			
+			</script>
+		
+		<div id="container">
+			<div id="header">
+			
+				<a href="history.html"><div class="h_blue_circle"></div></a>
+				<a href="charts.html"><div class="h_green_circle"></div></a>
+				<a href="doctor.html"><div class="h_orange_circle"></div></a>
+				<a href="/profile.html"><div class="h_red_circle"></div></a>
+				<a href="/welcome/index.html"><div class="home_btn">Home</div></a>
+				 
+			</div>
+			
+			
+			<div class="profile">
+			
+				<div class="left_sidebar">
+					<img src="images/profile/profile_pic.png"></img>
+					<div class="label"><%= @myuser.pname%></div>
+					<div class="label"><%= @myuser.email%></div>
+				</div>
+				
+				<div class="button_bg">	
+				<input type="button" class="profile_button" value="Edit"></input></br>
+				<a href="/patients/edit"><input type="button" class="profile_button" value="Change Password"></input></a></br>
+				<input type="button" class="profile_button" value="Reset Data"></input></br>
+				<a href="/patients/sign_out.html"><input type="button" class="profile_button" value="Logout"></input></a></br>
+				
+			</div>
+				
+			</div>
+			
+			
+			<div class="right_sidebar">
+			
+				<div class="label">Full Name <span class="prof_label"><%= @myuser.pname%></span></div>
+				<div class="label">Gender <span class="prof_label">Male</span></div>
+				<div class="label">Age <span class="prof_label"><%= Patient.age(@myuser.birthday)%></span></div>
+				<div class="label">Weight <span class="prof_label"><%= @myuser.pweight%></span></div>
+	
+				<div class="label">Diabetes Type <span class="prof_label"><%= @myuser.diabetetype%></span></div>
+				<div class="label">Pill <span class="prof_label"><%= @myuser.pillname%></span></div>
+				<div class="label">Insulin <span class="prof_label"><%= @myuser.insuline%></span></div>
+				<div class="label">Date of Birth <span class="prof_label"><%= @myuser.birthday%></span></div>
+				
+			</div>	
+		
+			
+			
+				
+		</div>
+			
+			
+	</body>
+</html>

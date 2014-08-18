@@ -13,7 +13,7 @@
 		
 				<div class="circle"></div>
 				</br>
-				<span class="welcome_text">Welcome, User</span>
+				<span class="welcome_text">Welcome, User <%= @myuser.pname %> with email: <%= @myuser.email %></span>
 				</br>
 				<span class="sub_text">Visit your...</span>
 				</br>
@@ -21,7 +21,7 @@
 				<a href="history.html"><div class="blue_circle"></div></a>
 				<a href="charts.html"><div class="green_circle"></div></a>
 				<a href="doctor.html"><div class="orange_circle"></div></a>
-				<a href="profile.html"><div class="red_circle"></div></a>
+				<a href="/profile.html"><div class="red_circle"></div></a>
 				
 				<div class="blue_text"><a href="history.html">History</a></div>
 				<div class="green_text"><a href="charts.html">Charts</a></div>
@@ -29,7 +29,7 @@
 				<div class="red_text"><a href="profile.html">Profile</a></div>
 			
 			
-				<footer><a href="login.html">Logout</a></footer>
+				<footer><a href="/patients/sign_out">Logout</a></footer>
 				
 	</body>	
 </html>

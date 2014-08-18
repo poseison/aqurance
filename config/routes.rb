@@ -9,12 +9,16 @@ Aqurance::Application.routes.draw do
 
   get 'welcome/index'
 
+
   resources :mlogins
+  
 
   resources :mregisters
+  resource  :profile
 
   get "angtest/index"
   get "provideapi/provide"
+
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -24,7 +28,9 @@ Aqurance::Application.routes.draw do
         resources :mregisters
       end
     end
-  devise_for :patients,:controllers => {registrations: 'registrations'}
+  devise_for :patients,:controllers => {registrations: 'registrations', passwords: 'passwords'}
+ 
+ 
   resources :meausurements
   resources :patients
   get ':status', to: 'errors#show', constraints: {status: /\d{3}/ }

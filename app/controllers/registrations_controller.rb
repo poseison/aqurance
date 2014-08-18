@@ -1,5 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   skip_before_filter  :verify_authenticity_token
+   before_filter :update_sanitized_params, if: :devise_controller?
  
   def create
     build_resource(sign_up_params)
@@ -19,12 +20,18 @@ class RegistrationsController < Devise::RegistrationsController
       return render :json => {:success => false}
     end
   end
+  def update
+      super
+    end
  
   # Signs in a user on sign up. You can overwrite this method in your own
   # RegistrationsController.
   def sign_up(resource_name, resource)
     sign_in(resource_name, resource)
   end
+  def update_sanitized_params
+        devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:pname, :email,   :password, :password_confirmation)}
+     end
   def sign_up_params
   devise_parameter_sanitizer.sanitize(:sign_up)
   end

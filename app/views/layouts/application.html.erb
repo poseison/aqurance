@@ -7,20 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body id="center_container" class="bg">>
-   <% flash.each do |name, msg| %>
-
-     # New code (allow for flash elements to be arrays)
-     <% if msg.class == Array %>
-       <% msg.each do |message| %>
-         <%= content_tag :div, message, :id => "flash_#{name}" %>
-       <% end %>
-     <% else %>
-
-       # old code
-       <%= content_tag :div, msg, :id => "flash_#{name}" %>
-
-     <% end %> #don't forget the extra end
-   <% end %>
+	<%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
+	<%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
+	<%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
+  
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
