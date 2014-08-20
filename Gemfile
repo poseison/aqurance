@@ -11,11 +11,12 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sass-rails', '>= 3.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+gem 'jquery-turbolinks'
 
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-gem 'rails-assets-angular'
+
 gem 'active_model_serializers'
 gem 'activeadmin', github: 'gregbell/active_admin'
 
@@ -29,6 +30,8 @@ gem 'devise'
 
 
 gem 'autoprefixer-rails'
+gem 'rails-assets-angular'
+gem 'rails-assets-angular-resource'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

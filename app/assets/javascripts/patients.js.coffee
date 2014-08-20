@@ -7,3 +7,6 @@ $("form#sign_up_user").bind "ajax:success", (e, data, status, xhr) ->
       console.log('Success')
     else
       console.log('failure')
+	  
+	  
+@RaffleCtrl = ($scope, $resource) ->

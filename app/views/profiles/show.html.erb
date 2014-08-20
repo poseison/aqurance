@@ -1,11 +1,5 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Diabetes</title>
- 	
-</head>
-	<body>
+
+	
 		<script>
 			
 				$(document).ready(function(){ 
@@ -14,11 +8,20 @@
 				});
 			
 			</script>
-		
+		<div ng-controller="RaffleCtrl">
 		<div id="container">
+			
+			
+			<h1>{{newEntry.name}}</h1>
+
+			<form>
+			  <input type="text" ng-model="newEntry.name">
+			</form> 
+
+			
 			<div id="header">
 			
-				<a href="history.html"><div class="h_blue_circle"></div></a>
+				<a href="/history/index.html"><div class="h_blue_circle"></div></a>
 				<a href="charts.html"><div class="h_green_circle"></div></a>
 				<a href="doctor.html"><div class="h_orange_circle"></div></a>
 				<a href="/profile.html"><div class="h_red_circle"></div></a>
@@ -36,7 +39,7 @@
 				</div>
 				
 				<div class="button_bg">	
-				<input type="button" class="profile_button" value="Edit"></input></br>
+				<input type="button" class="profile_button" value="Edit" ng-click="displaydeatils()"></input></br>
 				<a href="/patients/edit"><input type="button" class="profile_button" value="Change Password"></input></a></br>
 				<input type="button" class="profile_button" value="Reset Data"></input></br>
 				<a href="/patients/sign_out.html"><input type="button" class="profile_button" value="Logout"></input></a></br>
@@ -44,9 +47,24 @@
 			</div>
 				
 			</div>
+			<div class="right_sidebar" ng-show="DisplayUpdate === 'none'">
+			
+			<%= form_tag(patient_path(@myuser.id), method: "patch",remote:true) do %>
+	 
+			  <%= text_field_tag 'pname', nil, placeholder: @myuser.pname, class:'prof_label'%>
+			  <%= text_field_tag 'insuline', nil, placeholder:@myuser.insuline, class:'prof_label'%>
+			  <%= text_field_tag 'pillname', nil, placeholder:@myuser.pillname, class:'prof_label'%>
+			  <%= text_field_tag 'birthday', nil, placeholder:@myuser.birthday, class:'prof_label'%>
+			  <%= submit_tag("Update") %>
+	 
+			<%end%>
+			
+			</div>
 			
 			
-			<div class="right_sidebar">
+			<div class="right_sidebar" ng-show="displayDetails === 'Details'">
+				
+			
 			
 				<div class="label">Full Name <span class="prof_label"><%= @myuser.pname%></span></div>
 				<div class="label">Gender <span class="prof_label">Male</span></div>
@@ -57,14 +75,14 @@
 				<div class="label">Pill <span class="prof_label"><%= @myuser.pillname%></span></div>
 				<div class="label">Insulin <span class="prof_label"><%= @myuser.insuline%></span></div>
 				<div class="label">Date of Birth <span class="prof_label"><%= @myuser.birthday%></span></div>
-				
+					
 			</div>	
-		
-			
 			
 				
 		</div>
+	</div>
+		
+	
+		
 			
 			
-	</body>
-</html>
