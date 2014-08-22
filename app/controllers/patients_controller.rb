@@ -3,8 +3,13 @@ class PatientsController < ApplicationController
   
   
   def update
-    @c1=params[:pname]
-    puts @c1
+    pid=params[:id]
+    @mypatient=Patient.find(pid)
+    patientname=params[:pname]
+    puts "from the patients controller"
+    puts patientname
+    @mypatient.pname=patientname
+    @mypatient.save
     render "update"
   end
 end
