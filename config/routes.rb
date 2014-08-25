@@ -14,6 +14,7 @@ Aqurance::Application.routes.draw do
   
 
   resources :mregisters
+  resources :mlogins
   resource  :profile
 
   get "angtest/index"
@@ -26,6 +27,7 @@ Aqurance::Application.routes.draw do
       namespace :v1 do
         resources :meausurements
         resources :mregisters
+        resources :mlogins
       end
     end
   devise_for :patients,:controllers => {registrations: 'registrations', passwords: 'passwords'}
