@@ -3,6 +3,7 @@ module Api
   module V1
     class MeausurementsController < ApplicationController
       before_filter :fix_json_params
+      before_filter :restrict_access
       skip_before_filter :verify_authenticity_token
      # before_filter :restrict_access
       respond_to :json
@@ -23,7 +24,7 @@ module Api
              dinsulin=hash["didInsulin"]
              scdalert=hash["scheduleAlert"]
              mtglucoze=hash["glucoze"]
-             mthbalc=hash["hba1c"]
+             mthbalc=hash["hbalc"]
              mttype=hash["type"]
              mycomments=hash["comments"]
              mtr.alertdt=mydate

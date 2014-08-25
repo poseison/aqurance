@@ -3,6 +3,6 @@
 $(document).on "ajax:success", "form#sign_up_user",  (e, data, status, xhr) ->   
       if data.success
            alert('Success!')
-           window.location = "/welcome/index"
+           window.location = "10.21.32.164:3000/welcome/index"
           else
                 alert('failure')

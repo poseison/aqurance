@@ -20,6 +20,15 @@ module Api
         end
          render :json => msg
       end
+      private
+            def fix_json_params
+                if request.content_type == "application/json"
+                  @reparsed_params = JSON.parse(request.body.string).with_indifferent_access
+                end
+              end
+              def params
+                  @reparsed_params || super
+                end
     end
 end
 end
