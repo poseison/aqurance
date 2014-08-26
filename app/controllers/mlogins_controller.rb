@@ -4,7 +4,7 @@ class MloginsController < ApplicationController
     @memail=request.header["email"]
     user = Patient.find_by_email(@memail)
     if user.password=@mpassword
-      msg = { :status => "ok", :message => "Success!", :provideapi=> ApiKey.create!,:html => "<b>...</b>" }
+      msg = { :status => "ok", :message => "Success!", :provideapi=> ApiKey.create!,:uid=>user.id, :html => "<b>...</b>" }
     else
       msg = { :status => "no", :message => "Failure!", :html => "<b>...</b>" }
     end
