@@ -4,6 +4,7 @@ class PatientsController < ApplicationController
   
   def update
     pid=params[:id]
+    puts params[:update_attributes]
     @mypatient=Patient.find(pid)
     patientname=params[:pname]
     puts "from the patients controller"

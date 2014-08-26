@@ -6,17 +6,24 @@ module Api
         @email=params[:email]
         @usrname=params[:username]
         @mpasswd=params[:password]
-        @npatient=Patient.new
-        msg=Hash.new
+        puts @mpasswd
         if Patient.exists?(email:@email)
           puts' Patient exists'
           msg = { :status => "failure", :message => "Failure!", :html => "<b>...</b>" }
         else
+          @npatient=Patient.new
+          msg=Hash.new
           @npatient.email=@email
           @npatient.password=@mpasswd
           @npatient.pUsername=@usrname
-          @npatient.save
-          msg = { :status => "ok", :message => "Success!", :html => "<b>...</b>" }
+          if @npatient.save
+            puts 'Patient saved'
+            msg = { :status => "ok", :message => "Success!", :html => "<b>...</b>" }
+          else
+            puts 'Patient not save'
+            puts @npatient.errors.full_messages
+            msg = { :status => "no", :message => @npatient.errors.full_messages, :html => "<b>...</b>" }
+          end
         end
          render :json => msg
       end

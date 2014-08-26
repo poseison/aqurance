@@ -51,10 +51,10 @@
 			
 			<%= form_tag(patient_path(@myuser.id), method: "patch",remote:true) do %>
 	 
-			  <%= text_field_tag 'pname', nil, placeholder: @myuser.pname, class:'prof_label'%>
-			  <%= text_field_tag 'insuline', nil, placeholder:@myuser.insuline, class:'prof_label'%>
-			  <%= text_field_tag 'pillname', nil, placeholder:@myuser.pillname, class:'prof_label'%>
-			  <%= text_field_tag 'birthday', nil, placeholder:@myuser.birthday, class:'prof_label'%>
+			  <%= text_field_tag 'pname',nil, value: @myuser.pname, class:'prof_label'%>
+			  <%= text_field_tag 'insuline', nil, value: @myuser.insuline,placeholder:@myuser.insuline, class:'prof_label'%>
+			  <%= text_field_tag 'pillname', nil, value: @myuser.pillname,placeholder:@myuser.pillname, class:'prof_label'%>
+			  <%= text_field_tag 'birthday', nil, value: @myuser.birthday,placeholder:@myuser.birthday, class:'prof_label'%>
 			  <%= submit_tag("Update") %>
 	 
 			<%end%>
