@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140818083635) do
+ActiveRecord::Schema.define(version: 20140827105010) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -64,6 +64,9 @@ ActiveRecord::Schema.define(version: 20140818083635) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "patient_id"
+    t.string   "foods"
+    t.float    "weight"
+    t.float    "hba1c"
   end
 
   create_table "mlogins", force: true do |t|
@@ -103,7 +106,6 @@ ActiveRecord::Schema.define(version: 20140818083635) do
     t.string   "pillname"
     t.date     "birthday"
     t.integer  "diabetetype"
-    t.integer  "insuline"
   end
 
   add_index "patients", ["email"], name: "index_patients_on_email", unique: true, using: :btree

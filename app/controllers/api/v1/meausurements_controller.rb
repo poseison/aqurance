@@ -2,10 +2,8 @@ require 'json'
 module Api
   module V1
     class MeausurementsController < ApplicationController
-      before_filter :fix_json_params
-      before_filter :restrict_access
-      skip_before_filter :verify_authenticity_token
-     # before_filter :restrict_access
+   
+      skip_before_filter :verify_authenticity_token     
       respond_to :json
             def index
               
@@ -17,23 +15,42 @@ module Api
       
             def create
              @c1=params[:measurement]
-             hash=Hash.new
+             puts @c1.class
+             puts request.inspect
+             act=request.headers["HTTP_ACCESS_TOKEN"]
+             puts act
+             msg=Hash.new
+             if !ApiKey.exists?(access_token: act)  
+                 msg = { :status => "no", :message => "Unauhtorized!"}
+             else
+  
+          
+             puts @c1
+             @c1.each do |x|
+             myhash=x
+             puts request.headers
              mtr=Measurement.new
-             hash=@c1
-             mydate=hash["alertDateTime"]
-             dinsulin=hash["didInsulin"]
-             scdalert=hash["scheduleAlert"]
-             mtglucoze=hash["glucoze"]
-             mthbalc=hash["hbalc"]
-             mttype=hash["type"]
-             mycomments=hash["comments"]
-             mtr.alertdt=mydate
-             mtr.glucoze=mtglucoze
-             mtr.comments=mycomments
-             mtr.measuretype=hash["type"]
+             mtr.comments=myhash["comments"]
+             mtr.glucoze=myhash["glucoze"]
+             mtr.alertdt=myhash["alertDateTime"]
+             mtr.didinsul=myhash["didInsulin"]
+             mtr.insuleinunits=myhash["insulinUnits"]
+             mtr.didscheduleat=myhash["didInsulin"]
+             mtr.weight=myhash["weight"].to_f
+             mtr.hba1c=myhash["hba1c"].to_f          
+             puts myhash["alertDateTime"] 
+             puts myhash["comments"]
+             puts myhash["didInsulin"]
+             puts myhash["foodInfo"]
+             puts myhash["insulinID"]
+             puts myhash["comments"] 
              mtr.save
-             msg = { :status => "ok", :message => "Success!", :html => "<b>...</b>" }
-             render :json => msg
+             end
+             msg=Hash.new
+             msg= {:status =>"ok",:message =>"Success"}
+             end        
+             render :json => msg 
+            
             end
       
             def update
@@ -46,6 +63,7 @@ module Api
             private
                   def restrict_access
                     authenticate_or_request_with_http_token do |token, options|
+                        puts token
                         ApiKey.exists?(access_token: token)
                     end
                   end

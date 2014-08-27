@@ -7,9 +7,9 @@ module Api
         @usrname=params[:username]
         @mpasswd=params[:password]
         puts @mpasswd
-        if Patient.exists?(email:@email)
+        if Patient.exists?(email:@email) || Patient.exists?(pusername: @usrname) 
           puts' Patient exists'
-          msg = { :status => "failure", :message => "Failure!", :html => "<b>...</b>" }
+          msg = { :status => "no", :message => "Existing credentials!", :html => "<b>...</b>" }
         else
           @npatient=Patient.new
           msg=Hash.new
@@ -18,7 +18,7 @@ module Api
           @npatient.pUsername=@usrname
           if @npatient.save
             puts 'Patient saved'
-            msg = { :status => "ok", :message => "Success!", :html => "<b>...</b>" }
+            msg = { :status => "ok",:provideapi=> ApiKey.create!, :message => "Success!", :html => "<b>...</b>" }
           else
             puts 'Patient not save'
             puts @npatient.errors.full_messages
