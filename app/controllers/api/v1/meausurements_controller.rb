@@ -26,6 +26,7 @@ module Api
   
           
              puts @c1
+             allids=Array.new
              @c1.each do |x|
              myhash=x
              puts request.headers
@@ -44,10 +45,12 @@ module Api
              puts myhash["foodInfo"]
              puts myhash["insulinID"]
              puts myhash["comments"] 
-             mtr.save
+             if mtr.save 
+               allids<<mtr.id
+             end
              end
              msg=Hash.new
-             msg= {:status =>"ok",:message =>"Success"}
+             msg= {:status =>"ok",:ids=>allids, :message =>"Success"}
              end        
              render :json => msg 
             
