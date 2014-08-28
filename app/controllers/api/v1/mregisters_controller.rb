@@ -34,7 +34,7 @@ module Api
         puts params[:id]
         mypatient.pUsername=myhash["name"]
         mypatient.age=myhash["age"]
-        mypatient.birthday=myhash["birthday"]
+      
         mypatient.gender=myhash["gender"]
         mypatient.pname=myhash["name"]
         mypatien.pgender=myhash["gender"].to_i
