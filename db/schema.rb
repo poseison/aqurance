@@ -106,7 +106,6 @@ ActiveRecord::Schema.define(version: 20140827105010) do
     t.string   "pillname"
     t.date     "birthday"
     t.integer  "diabetetype"
-    t.integer  "insuline"
   end
 
   add_index "patients", ["email"], name: "index_patients_on_email", unique: true, using: :btree

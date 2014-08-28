@@ -14,7 +14,7 @@ development:
   database: aqurance_development
   pool: 5
   username: root
-  password: 
+  password: 123456 
   host: localhost
   
 
@@ -27,7 +27,7 @@ test:
   database: aqurance_test
   pool: 5
   username: root
-  password: 
+  password: 123456
   host: localhost
  
 
@@ -37,5 +37,5 @@ production:
   database: aqurance_production
   pool: 5
   username: root
-  password:
+  password: 123456
   host: localhost

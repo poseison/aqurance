@@ -33,12 +33,13 @@ module Api
         mypatient=Patient.find_by_id(params[:id])
         puts params[:id]
         mypatient.pUsername=myhash["name"]
-        mypatient.age=myhash["age"]
+         
       
-        mypatient.gender=myhash["gender"]
+       
+          
         mypatient.pname=myhash["name"]
-        mypatien.pgender=myhash["gender"].to_i
-        mypatient.insuline=myhash["insulinID"].to_i
+        mypatient.pgender=myhash["gender"].to_i
+        
         if mypatient.save 
           msg = { :status => "ok", :message => "Updated", :html => "<b>...</b>" }
         else
