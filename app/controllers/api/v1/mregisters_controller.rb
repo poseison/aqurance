@@ -29,11 +29,16 @@ module Api
       end
       def update
         msg=Hash.new
+        myhash=params[:patient]
         mypatient=Patient.find_by_id(params[:id])
         puts params[:id]
-        mypatient.pUsername=params[:username]
-        mypatient.email=params[:email]
-        mypatient.password=params[:password]
+        mypatient.pUsername=myhash["name"]
+        mypatient.age=myhash["age"]
+        mypatient.birthday=myhash["birthday"]
+        mypatient.gender=myhash["gender"]
+        mypatient.pname=myhash["name"]
+        mypatien.pgender=myhash["gender"].to_i
+        mypatient.insuline=myhash["insulinID"].to_i
         if mypatient.save 
           msg = { :status => "ok", :message => "Updated", :html => "<b>...</b>" }
         else
