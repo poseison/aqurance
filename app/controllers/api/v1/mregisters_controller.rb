@@ -27,6 +27,20 @@ module Api
         end
          render :json => msg
       end
+      def update
+        msg=Hash.new
+        mypatient=Patient.find_by_id(params[:id])
+        puts params[:id]
+        mypatient.pUsername=params[:username]
+        mypatient.email=params[:email]
+        mypatient.password=params[:password]
+        if mypatient.save 
+          msg = { :status => "ok", :message => "Updated", :html => "<b>...</b>" }
+        else
+          msg = { :status => "no", :message => mypatient.errors.full_messages, :html => "<b>...</b>" }
+        end
+        render :json => msg            
+      end
       private
             def fix_json_params
                 if request.content_type == "application/json"

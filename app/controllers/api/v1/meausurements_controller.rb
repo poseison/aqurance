@@ -54,7 +54,9 @@ module Api
             end
       
             def update
-              
+              mypatient=Patient.find_by_id(params[:id])
+              thename=params[:username]
+              mypatient.save              
             end
       
             def destroy
@@ -63,6 +65,7 @@ module Api
             private
                   def restrict_access
                     authenticate_or_request_with_http_token do |token, options|
+                      
                         puts token
                         ApiKey.exists?(access_token: token)
                     end
