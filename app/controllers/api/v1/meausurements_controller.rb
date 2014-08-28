@@ -20,13 +20,13 @@ module Api
              act=request.headers["HTTP_ACCESS_TOKEN"]
              puts act
              msg=Hash.new
+             allids=Array.new
              if !ApiKey.exists?(access_token: act)  
                  msg = { :status => "no", :message => "Unauhtorized!"}
              else
   
           
              puts @c1
-             allids=Array.new
              @c1.each do |x|
              myhash=x
              puts request.headers
