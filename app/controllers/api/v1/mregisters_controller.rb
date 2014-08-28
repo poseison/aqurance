@@ -18,7 +18,7 @@ module Api
           @npatient.pUsername=@usrname
           if @npatient.save
             puts 'Patient saved'
-            msg = { :status => "ok",:provideapi=> ApiKey.create!, :message => "Success!", :html => "<b>...</b>" }
+            msg = { :status => "ok",:provideapi=> ApiKey.create!, :pid=>@npatient.id, :message => "Success!", :html => "<b>...</b>" }
           else
             puts 'Patient not save'
             puts @npatient.errors.full_messages
